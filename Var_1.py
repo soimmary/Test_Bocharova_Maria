@@ -38,8 +38,11 @@ graph = [
 ]
 finish_loc = 2
 
+# Идея в том, что для героя находится кратчайший путь и герой следует только ему. 
+# Если путь героя пересекается с путем монстра, то герой стоит на месте и ждет, 
+# когда монстр уйдет и освободит ему путь или когда монстр его съест.
 
-""" 1. Находим наиболее быстрый для героя путь"""
+# Функция ниболее быстрого пути для героя
 def hero_best_path(nodes_names, graph, visits, cur_node, where):
     # Вершина проверяет, она ли является конечным пунктом
     if where == cur_node:
@@ -65,6 +68,8 @@ best_path2 = hero_best_path(nodes_names, graph, visited, hero2, finish_loc)
 
 print(best_path1, best_path2)
 
+
+# Функция показывает возможные пути монстра
 def monster_possible_path(monster_starting_pos):
     choice = random.randint(0, 1)
     if choice == 0:
@@ -76,7 +81,6 @@ def monster_possible_path(monster_starting_pos):
 
 
 # monster1, monster2, monster3 – где находятся монстры на данный момент
-
 def game(hero1_start, hero2_start, monster1, monster2, monster3, i=1):
     # Сначала ходят монстры
     monster1_new = monster_possible_path(monster1)
