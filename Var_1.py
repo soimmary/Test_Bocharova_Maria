@@ -1,5 +1,7 @@
 import random
 
+# Бочарова Мария
+
 """ Дан граф, описывающий возможность перемещений между локациями.
 Команда из нескольких героев находится в разных вершинах этого графа –> в этой версии игры 2 героя.
 В других вершинах графа находятся монстры –> в этой версии игры 3 монстра. 
@@ -94,4 +96,4 @@ def game(hero1_start, hero2_start, monster1, monster2, monster3, i=1):
     elif hero2_start != str(monster1_new) and hero2_start != str(monster2_new) and hero2_start != str(monster3_new):
         if hero2_start != best_path1[:-1] and i+1 < len(best_path1):
             hero2_start = best_path1[i+1]
-
+    # дальше должна идти рекурсия, но я не понимаю, как докрутить этот код
